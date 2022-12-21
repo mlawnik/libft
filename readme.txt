@@ -24,20 +24,43 @@ strnstr
 atoi
 calloc
 strdup
+
+
 isalpha
+The isalpha  function that checks if a character is an alphabetic character.
+The function takes a single argument, c, which is an int type. It checks if c is a lowercase or uppercase letter of the alphabet by comparing it to the ASCII values of the letters 'a' and 'z' for lowercase letters and 'A' and 'Z' for uppercase letters.
+If c is an alphabetic character, the function returns 1. Otherwise, it returns 0.
 
+Here's how the function works in more detail:
 
-The isalpha function checks if a character is an alphabetic character. It returns a non-zero value (i.e., true) if the character is an alphabetic character, and 0 (i.e., false) if it is not.
+The function first checks if c is a lowercase letter by using the expression (c >= 'a' && c <= 'z'). This checks if c is greater than or equal to the ASCII value of 'a' and less than or equal to the ASCII value of 'z'.
+If this expression is true, it means that c is a lowercase letter.
+The function then checks if c is an uppercase letter by using the expression (c >= 'A' && c <= 'Z'). This checks if c is greater than or equal to the ASCII value of 'A' and less than or equal to the ASCII value of 'Z'.
+If this expression is true, it means that c is an uppercase letter.
+If either of the two expressions above is true, the function returns 1.
+Otherwise, it returns 0.
 
-#include <ctype.h>
-int isalpha(int c);
+For example, if the function is called with the argument 'a', it will return 1 because 'a' is a lowercase letter.
+If the function is called with the argument 'A', it will also return 1 because 'A' is an uppercase letter.
+If the function is called with the argument '1', it will return 0 because '1' is not an alphabetic character.
 
 
 isdigit
-The isdigit function checks if a character is a decimal digit. It returns a non-zero value (i.e., true) if the character is a decimal digit, and 0 (i.e., false) if it is not.
+The isdigit function that checks if a character is a digit.
+The function takes a single argument, c, which is an int type. It checks if c is a digit by comparing it to the ASCII values of the digits '0' through '9'.
 
-#include <ctype.h>
-int isdigit(int c);
+If c is a digit, the function returns 1. Otherwise, it returns 0.
+
+Here's how the function works in more detail:
+
+The function uses the expression (c >= '0' && c <= '9') to check if c is a digit.
+This checks if c is greater than or equal to the ASCII value of '0' and less than or equal to the ASCII value of '9'.
+If this expression is true, it means that c is a digit.
+If the expression above is true, the function returns 1.
+Otherwise, it returns 0.
+
+For example, if the function is called with the argument '5', it will return 1 because '5' is a digit.
+If the function is called with the argument 'a', it will return 0 because 'a' is not a digit.
 
 
 isalnum
