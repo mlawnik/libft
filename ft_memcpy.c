@@ -6,7 +6,7 @@
 /*   By: mlawnik <mlawnik@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 15:18:09 by mlawnik           #+#    #+#             */
-/*   Updated: 2022/12/20 17:03:08 by mlawnik          ###   ########.fr       */
+/*   Updated: 2022/12/21 11:51:19 by mlawnik          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,26 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	void	*ret;
+	char	*ptr_dst;
+	const char	*ptr_src;
+	size_t	i;
 
-	ret = dst;
+	if (!dst && !src)
+		return (0);
+
 	if (n > 0)
 	{
-		while (n--)
-			*(unsigned char *) dst++ = *(unsigned char *) src++;
-		return (ret);
+		i = 0;
+		ptr_dst = (char *) dst;
+		ptr_src = (const char *) src;
+
+		while (i < n)
+		{
+			ptr_dst[i] = ptr_src[i];
+			i++;
+		}
 	}
+	return (dst);
 }
 
 // int	main(void)
