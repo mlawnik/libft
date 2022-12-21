@@ -6,13 +6,13 @@
 /*   By: mlawnik <mlawnik@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 12:31:47 by mlawnik           #+#    #+#             */
-/*   Updated: 2022/12/16 12:42:31 by mlawnik          ###   ########.fr       */
+/*   Updated: 2022/12/20 14:49:53 by mlawnik          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isascii(int c)
 {
-	if (c >= '0' && c <= '127')
+	if (c >= 0 && c <= 127)
 		return (1);
 	return (0);
 }

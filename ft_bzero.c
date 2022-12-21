@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlawnik <mlawnik@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/16 13:13:12 by mlawnik           #+#    #+#             */
-/*   Updated: 2022/12/20 15:21:37 by mlawnik          ###   ########.fr       */
+/*   Created: 2022/12/17 12:21:23 by mlawnik           #+#    #+#             */
+/*   Updated: 2022/12/20 16:09:35 by mlawnik          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+void	ft_bzero(void *b, size_t len)
 {
-	size_t	strlen;
-
-	strlen = 0;
-	while (s[strlen])
-	strlen++;
-	return (strlen);
+	ft_memset(b, 0, len);
 }
 
 // #include <stdio.h>
+// #include <string.h>
 
 // int	main(void)
 // {
-// 	char	*str;
+// 	char	buffer[10];
 
-// 	str = "bark";
-
-// 	printf("%zu", ft_strlen(str));
+// 	strcpy(buffer, "hello");
+// 	printf("Before bzero: %s\n", buffer);
+// 	bzero(buffer, sizeof(buffer));
+// 	printf("After bzero: %s\n", buffer);
 // 	return (0);
 // }

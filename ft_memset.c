@@ -6,7 +6,7 @@
 /*   By: mlawnik <mlawnik@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 11:07:36 by mlawnik           #+#    #+#             */
-/*   Updated: 2022/12/20 13:25:17 by mlawnik          ###   ########.fr       */
+/*   Updated: 2022/12/19 15:22:45 by mlawnik          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,33 +14,24 @@
 
 void	*ft_memset(void *b, int c, size_t len)
 {
-	unsigned char	*ptr;
-	unsigned char	value;
-	unsigned long int	i;
+	unsigned char	*p;
 
-	if (n > 0)
+	p = b;
+	while (len--)
 	{
-		i = 0;
-		ptr = (unsigned char *) b;
-		value = (unsigned char) c;
-		while (i > len)
-		{
-			ptr [i] = value;
-			i++;
-		}
+		*p++ = (unsigned char)c;
 	}
 	return (b);
 }
 
-#include <stdio.h>
-#include <string.h>
-#include <assert.h>
+// #include <stdio.h>
+// #include <string.h>
 
-void	*ft_memset(void *b, int c, size_t len);
+// int	main(void)
+// {
+// 	char	*str;
 
-int	main()
-{
-	char b[20] = "Hello, world!";
-
-	assert()
-}
+// 	str = strdup("hello");
+// 	ft_memset(str, 'a', 5);
+// 	printf("%s\n", str);
+// }

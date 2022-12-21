@@ -6,13 +6,13 @@
 /*   By: mlawnik <mlawnik@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 12:43:07 by mlawnik           #+#    #+#             */
-/*   Updated: 2022/12/16 13:10:40 by mlawnik          ###   ########.fr       */
+/*   Updated: 2022/12/20 15:28:20 by mlawnik          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isprint(int c)
 {
-	if (c >= '32' && c <= '127')
+	if (c >= 32 && c <= 126)
 		return (1);
 	return (0);
 }

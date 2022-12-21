@@ -1,35 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlawnik <mlawnik@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/16 13:13:12 by mlawnik           #+#    #+#             */
-/*   Updated: 2022/12/20 15:21:37 by mlawnik          ###   ########.fr       */
+/*   Created: 2022/12/17 15:18:09 by mlawnik           #+#    #+#             */
+/*   Updated: 2022/12/20 17:03:08 by mlawnik          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	size_t	strlen;
+	void	*ret;
 
-	strlen = 0;
-	while (s[strlen])
-	strlen++;
-	return (strlen);
+	ret = dst;
+	if (n > 0)
+	{
+		while (n--)
+			*(unsigned char *) dst++ = *(unsigned char *) src++;
+		return (ret);
+	}
 }
-
-// #include <stdio.h>
 
 // int	main(void)
 // {
-// 	char	*str;
+// 	char	str1[];
+// 	char	str2[6];
 
-// 	str = "bark";
+// 	str1 = "Hello";
 
-// 	printf("%zu", ft_strlen(str));
-// 	return (0);
+// 	memcpy(str2 str1, 5);
+// 	str[2] = '\0';
+// 	printf("str2: %s\n", str2);
 // }
