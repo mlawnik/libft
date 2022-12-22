@@ -1,49 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlawnik <mlawnik@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/17 15:18:09 by mlawnik           #+#    #+#             */
-/*   Updated: 2022/12/21 12:18:31 by mlawnik          ###   ########.fr       */
+/*   Created: 2022/12/21 12:13:59 by mlawnik           #+#    #+#             */
+/*   Updated: 2022/12/22 11:09:06 by mlawnik          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	char		*ptr_dst;
-	const char	*ptr_src;
 	size_t		i;
 
 	if (!dst && !src)
 		return (0);
-
-	if (n > 0)
+	if (len > 0)
 	{
 		i = 0;
-		ptr_dst = (char *) dst;
-		ptr_src = (const char *) src;
-
-		while (i < n)
+		if (dst < src)
 		{
-			ptr_dst[i] = ptr_src[i];
-			i++;
+			while (i < len)
+			{
+				((char *) dst)[i] = ((char *) src)[i];
+				i++;
+			}
+		}
+		else
+		{
+			while (i < len)
+			{
+				((char *) dst)[len - i - 1] = ((char *) src)[len - i - 1];
+				i++;
+			}
 		}
 	}
 	return (dst);
 }
-
-// int	main(void)
-// {
-// 	char	str1[];
-// 	char	str2[6];
-
-// 	str1 = "Hello";
-
-// 	memcpy(str2 str1, 5);
-// 	str[2] = '\0';
-// 	printf("str2: %s\n", str2);
-// }
