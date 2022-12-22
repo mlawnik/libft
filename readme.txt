@@ -208,7 +208,7 @@ Finally, the function returns a pointer to the destination memory block.
 ___
 
 strlcpy
-This strlcpy function copies a string from a source buffer (src) to a destination buffer (dst).
+The strlcpy function copies a string from a source buffer (src) to a destination buffer (dst).
 The size_t type is an unsigned integer type used to represent the size of an object.
 
 The function takes three arguments:
@@ -225,4 +225,34 @@ until either the end of the "src" string is reached or "dstsize" - 1 characters 
 
 After the loop completes, the function adds a null terminator to the end of the "dst" string to mark the end of the string.
 Finally, the function returns the length of the src string.
+___
+
+strlcat
+The strlcat function concatenates (attaches/links) a string from a source buffer (src) to a destination buffer (dst).
+The size_t type is an unsigned integer type used to represent the size of an object.
+
+The function takes three arguments:
+
+dst is a pointer to a character array that will receive the concatenated string.
+src is a pointer to a null-terminated character array that contains the string to be concatenated.
+dstsize is an integer value representing the size of the dst buffer.
+The function first determines the lengths of the dst and src strings using the ft_strlen function, which calculates the length of a null-terminated string.
+The lengths of the dst and src strings are stored in the dst_len and src_len variables, respectively.
+
+Next, the function initializes the i_dst and i_src variables to the lengths of the dst and src strings, respectively.
+These variables will be used to keep track of the current position in the dst and src buffers as the strings are concatenated.
+
+The function then enters a loop that copies characters from the src string to the dst buffer, one character at a time,
+until either the end of the src string is reached or dstsize - 1 characters have been copied (the -1 is necessary to leave room for the null terminator at the end of the string).
+The loop also checks if the length of the dst string is less than dstsize, which ensures that the loop will not write beyond the end of the dst buffer.
+
+After the loop completes, the function adds a null terminator to the end of the dst string to mark the end of the string.
+Finally, the function checks if the dstsize is less than dst_len.
+If it is, the function returns the sum of dstsize and src_len, which represents the total length of the concatenated string.
+If dstsize is not less than dst_len, the function returns the sum of dst_len and src_len, which represents the total length of the concatenated string if it were possible to fit it in the dst buffer.
+
+This function is similar to the standard C library function strlcat, but it may have some differences in behavior.
+For example, strlcat returns the length of the dst string plus the length of the src string,
+whereas ft_strlcat returns the length of the dst string plus the length of the src string only if dstsize is greater than or equal to dst_len.
+If dstsize is less than dst_len, ft_strlcat returns dstsize plus the length of the src string.
 ___
