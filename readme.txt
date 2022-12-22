@@ -194,3 +194,38 @@ It does this by using two pointers: "ptr_dst" points to the destination location
 The function then copies each byte one at a time using a loop that iterates "n" times.
 
 Finally, the function returns the destination location as a void pointer.
+___
+
+memmove
+The memmove function copies a block of memory from one location to another.
+The function takes three arguments:
+
+"dst" is a pointer to the destination memory block where the copy will be placed.
+"src" is a pointer to the source memory block that will be copied.
+"n" is the number of bytes to be copied.
+The function first checks if either "dst" or "src" is a null pointer. If either is null, the function returns 0.
+Otherwise, the function proceeds to copy the memory block.
+
+If "dst" is less than src, the function copies the memory block from the beginning of the source block to the beginning of the destination block.
+This is done by iterating through the block with a loop and copying each byte one at a time.
+
+If "dst" is greater than src, the function copies the memory block from the end of the source block to the end of the destination block.
+This is done by iterating through the block with a loop and copying each byte one at a time, starting from the end of the block.
+
+Finally, the function returns a pointer to the destination memory block.
+___
+
+strlcpy
+This is a function that copies a null-terminated string from one location to another. The function takes three arguments:
+
+dst is a pointer to the destination buffer where the string will be copied.
+src is a pointer to the source string that will be copied.
+size is the size of the destination buffer.
+The function first determines the length of the source string using the ft_strlen function, which is defined in the libft.h header file. The ft_strlen function returns the length of a null-terminated string by counting the number of characters until it encounters a null terminator.
+
+The function then proceeds to copy the string from the source to the destination, one character at a time, until it reaches the end of the source string or the size of the destination buffer, whichever comes first.
+
+If the size of the destination buffer is greater than zero, the function copies the string and null-terminates the destination string. If the size of the destination buffer is zero, no characters are copied and the destination string is not null-terminated.
+
+Finally, the function returns the length of the source string.
+___
