@@ -250,9 +250,33 @@ After the loop completes, the function adds a null terminator to the end of the 
 Finally, the function checks if the dstsize is less than dst_len.
 If it is, the function returns the sum of dstsize and src_len, which represents the total length of the concatenated string.
 If dstsize is not less than dst_len, the function returns the sum of dst_len and src_len, which represents the total length of the concatenated string if it were possible to fit it in the dst buffer.
-
-This function is similar to the standard C library function strlcat, but it may have some differences in behavior.
-For example, strlcat returns the length of the dst string plus the length of the src string,
-whereas ft_strlcat returns the length of the dst string plus the length of the src string only if dstsize is greater than or equal to dst_len.
-If dstsize is less than dst_len, ft_strlcat returns dstsize plus the length of the src string.
 ___
+
+toupper
+The toupper function converts a lowercase letter to uppercase. The function takes a single argument c, which is an integer representing a character in ASCII encoding.
+
+The function first checks if c is a lowercase letter by checking if it falls within the range 'a' to 'z' (ASCII values 97 to 122). If c is a lowercase letter, the function returns the uppercase equivalent of c by subtracting 32 from its ASCII value. This is because the ASCII values of lowercase letters are 32 greater than the corresponding uppercase letters.
+
+If c is not a lowercase letter, the function simply returns c without modifying it.
+
+This function is similar to the standard C library function toupper, but it may have some differences in behavior. For example, toupper is defined in the standard C library header file ctype.h, whereas ft_toupper is not. Additionally, toupper may be implemented differently on different platforms or with different compiler options.
+___
+
+tolower
+The tolower function converts an uppercase letter to lowercase. The function takes a single argument c, which is an integer representing a character in ASCII encoding.
+
+The function first checks if c is an uppercase letter by checking if it falls within the range 'A' to 'Z' (ASCII values 65 to 90). If c is an uppercase letter, the function returns the lowercase equivalent of c by adding 32 to its ASCII value. This is because the ASCII values of uppercase letters are 32 less than the corresponding lowercase letters.
+
+If c is not an uppercase letter, the function simply returns c without modifying it.
+
+This function is similar to the standard C library function tolower, but it may have some differences in behavior. For example, tolower is defined in the standard C library header file ctype.h, whereas ft_tolower is not. Additionally, tolower may be implemented differently on different platforms or with different compiler options.
+___
+
+strchr
+The strchr function  searches for the first occurrence of a given character in a string. The function takes two arguments: s, which is a pointer to a null-terminated string, and c, which is an integer representing a character in ASCII encoding.
+
+The function first calls the ft_strlen function to get the length of the string s and stores the result in the s_len variable. It then initializes the i variable to 0.
+
+The function then enters a loop that iterates over the elements of the s array. For each iteration, it checks if the current element is equal to c. If it is, the function converts the address of the current element to a char pointer and returns it as the result of the function. If no match is found, the function returns NULL.
+___
+
