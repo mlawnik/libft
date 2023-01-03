@@ -1,47 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlawnik <mlawnik@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/17 15:18:09 by mlawnik           #+#    #+#             */
-/*   Updated: 2023/01/03 16:55:45 by mlawnik          ###   ########.fr       */
+/*   Created: 2023/01/03 16:19:08 by mlawnik           #+#    #+#             */
+/*   Updated: 2023/01/03 16:56:32 by mlawnik          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	char		*ptr_dst;
-	const char	*ptr_src;
-	size_t		i;
+	size_t	i;
+	size_t	needle_len;
+	char	*ptr;
 
-	if (!dst && !src)
+	i = 0;
+	needle_len = ft_strlen(needle);
+	ptr = (char *) haystack;
+	if (needle_len > ft_strlen(haystack))
 		return (0);
-	if (n > 0)
+	if (needle_len == 0)
+		return (&ptr[i]);
+	while (i + needle_len <= len)
 	{
-		i = 0;
-		ptr_dst = (char *) dst;
-		ptr_src = (const char *) src;
-		while (i < n)
+		if (haystack[i] == needle[0])
 		{
-			ptr_dst[i] = ptr_src[i];
-			i++;
+			if (ft_strncmp(&haystack[i], needle, needle_len) == 0)
+				return (&ptr[i]);
 		}
+		i++;
 	}
-	return (dst);
+	return (0);
 }
-
-// int	main(void)
-// {
-// 	char	str1[];
-// 	char	str2[6];
-
-// 	str1 = "Hello";
-
-// 	memcpy(str2 str1, 5);
-// 	str[2] = '\0';
-// 	printf("str2: %s\n", str2);
-// }
