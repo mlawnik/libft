@@ -280,3 +280,23 @@ The function first calls the ft_strlen function to get the length of the string 
 The function then enters a loop that iterates over the elements of the s array. For each iteration, it checks if the current element is equal to c. If it is, the function converts the address of the current element to a char pointer and returns it as the result of the function. If no match is found, the function returns NULL.
 ___
 
+strrchr
+The strrchr function searches for the last occurrence of a given character in a string. The function takes two arguments: s, which is a pointer to a null-terminated string, and c, which is an integer representing a character in ASCII encoding.
+
+The function first calls the ft_strlen function to get the length of the string s. It then casts c to an unsigned char and stores the result in the x variable. This is done because the s[i] array uses char as its element type, and char is often implemented as a signed type. Converting c to unsigned char ensures that the comparison s[i] == x does not result in undefined behavior if c is a negative value.
+
+The function then enters a loop that iterates over the elements of the s array in reverse order. For each iteration, it checks if the current element is equal to x. If it is, the function stores the address of the current element in the ptr variable and returns ptr as the result of the function. If no match is found, the function returns NULL.
+___
+
+strncmp
+The strncmp function compares two strings lexicographically. The function takes three arguments: s1 and s2, which are pointers to null-terminated strings, and n, which is a size_t value specifying the maximum number of characters to compare.
+
+The function initializes the i variable to 0 and enters a loop that iterates over the elements of the s1 and s2 arrays. For each iteration, the function compares the current elements of the s1 and s2 arrays using the following logic:
+
+If the element of s1 is less than the element of s2, the function returns the difference between the elements as the result of the function.
+If the element of s1 is greater than the element of s2, the function returns the difference between the elements as the result of the function.
+If the element of s1 is equal to the element of s2, the function continues to the next iteration.
+If either element is the null character ('\0'), the function returns 0.
+If the loop completes without returning a value, the function returns 0.
+___
+
