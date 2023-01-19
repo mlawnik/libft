@@ -1,41 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlawnik <mlawnik@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/05 13:55:06 by mlawnik           #+#    #+#             */
-/*   Updated: 2023/01/12 18:47:02 by mlawnik          ###   ########.fr       */
+/*   Created: 2023/01/19 13:24:18 by mlawnik           #+#    #+#             */
+/*   Updated: 2023/01/19 13:29:17 by mlawnik          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	void	*substring;
-	size_t	s_len;
+	unsigned int	i;
+	char			*substring;
 
-	if (!s)
+	if (!s || !f)
 		return (NULL);
-	s_len = ft_strlen(s);
-	if (len > s_len)
-		substring = malloc(s_len + 1);
-	else
-		substring = malloc(len + 1);
+	substring = (char *) malloc(ft_strlen(s) + 1);
 	if (!substring)
 		return (NULL);
-	if (start <= s_len)
+	i = 0;
+	while (s[i])
 	{
-		ft_strlcpy((char *) substring, &s[start], len + 1);
-		return ((char *) substring);
+		substring[i] = f(i, s[i]);
+		i++;
 	}
-	((char *) substring)[0] = '\0';
-	return ((char *) substring);
+	substring[i] = '\0';
+	return (substring);
 }
-
-// int	main(void)
-// {
-// 	ft_substr("hola", 0, 18446744073709551615);
-// }

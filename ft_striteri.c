@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlawnik <mlawnik@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/16 13:13:12 by mlawnik           #+#    #+#             */
-/*   Updated: 2023/01/18 17:37:10 by mlawnik          ###   ########.fr       */
+/*   Created: 2023/01/19 13:30:55 by mlawnik           #+#    #+#             */
+/*   Updated: 2023/01/19 13:34:06 by mlawnik          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	size_t	strlen;
+	unsigned int	i;
 
-	strlen = 0;
-	while (s[strlen])
-	strlen++;
-	return (strlen);
+	if (s && f)
+	{
+		i = 0;
+		while (s[i])
+		{
+			f(i, &s[i]);
+			i++;
+		}
+	}
 }
-
-//  #include <stdio.h>
-
-//  int	main(void)
-//  {
-//  	char	*str;
-
-//  	str = "bark";
-
-//  	printf("%zu", ft_strlen(str));
-//  	return (0);
-//  }

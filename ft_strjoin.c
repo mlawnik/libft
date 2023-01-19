@@ -1,41 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlawnik <mlawnik@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/05 13:55:06 by mlawnik           #+#    #+#             */
-/*   Updated: 2023/01/12 18:47:02 by mlawnik          ###   ########.fr       */
+/*   Created: 2023/01/12 19:13:00 by mlawnik           #+#    #+#             */
+/*   Updated: 2023/01/12 19:27:51 by mlawnik          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
 	void	*substring;
-	size_t	s_len;
+	void	*sub_pos;
+	size_t	s1_len;
+	size_t	s2_len;
 
-	if (!s)
-		return (NULL);
-	s_len = ft_strlen(s);
-	if (len > s_len)
-		substring = malloc(s_len + 1);
-	else
-		substring = malloc(len + 1);
+	if (!s1 || !s2)
+		return (0);
+	s1_len = ft_strlen(s1);
+	s2_len = ft_strlen(s2);
+	substring = malloc(s1_len + s2_len +1);
 	if (!substring)
-		return (NULL);
-	if (start <= s_len)
-	{
-		ft_strlcpy((char *) substring, &s[start], len + 1);
-		return ((char *) substring);
-	}
-	((char *) substring)[0] = '\0';
+		return (0);
+	ft_memcpy(substring, (const void *) s1, s1_len);
+	sub_pos = &(((char *) substring)[s1_len]);
+	ft_memcpy(sub_pos, (const void *) s2, s2_len);
+	((char *) substring)[s1_len + s2_len] = '\0';
 	return ((char *) substring);
 }
-
-// int	main(void)
-// {
-// 	ft_substr("hola", 0, 18446744073709551615);
-// }

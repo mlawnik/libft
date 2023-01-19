@@ -1,35 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlawnik <mlawnik@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/16 13:13:12 by mlawnik           #+#    #+#             */
-/*   Updated: 2023/01/18 17:37:10 by mlawnik          ###   ########.fr       */
+/*   Created: 2023/01/19 14:35:24 by mlawnik           #+#    #+#             */
+/*   Updated: 2023/01/19 15:07:08 by mlawnik          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+void	ft_putendl_fd(char *s, int fd)
 {
-	size_t	strlen;
-
-	strlen = 0;
-	while (s[strlen])
-	strlen++;
-	return (strlen);
+	if (s)
+	{
+		ft_putstr_fd(s, fd);
+		ft_putchar_fd('\n', fd);
+	}
 }
-
-//  #include <stdio.h>
-
-//  int	main(void)
-//  {
-//  	char	*str;
-
-//  	str = "bark";
-
-//  	printf("%zu", ft_strlen(str));
-//  	return (0);
-//  }
