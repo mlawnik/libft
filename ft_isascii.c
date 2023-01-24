@@ -6,7 +6,7 @@
 /*   By: mlawnik <mlawnik@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 12:31:47 by mlawnik           #+#    #+#             */
-/*   Updated: 2022/12/20 14:49:53 by mlawnik          ###   ########.fr       */
+/*   Updated: 2023/01/20 18:13:38 by mlawnik          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,3 @@ int	ft_isascii(int c)
 		return (1);
 	return (0);
 }
-
-// #include <stdio.h>
-
-// int	main(void)
-// {
-// 	int	c;
-
-//     c = '42';
-
-// 	printf ("%d", ft_isascii(c));
-
-// 	return (0);
-// }

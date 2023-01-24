@@ -6,7 +6,7 @@
 /*   By: mlawnik <mlawnik@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 11:24:02 by mlawnik           #+#    #+#             */
-/*   Updated: 2022/12/16 11:31:48 by mlawnik          ###   ########.fr       */
+/*   Updated: 2023/01/20 18:13:48 by mlawnik          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,3 @@ int	ft_isalnum(int c)
 		return (1);
 	return (0);
 }
-
-// #include <stdio.h>
-
-// int	main(void)
-// {
-// 	int	c;
-
-//     c = 'H';
-
-// 	printf ("%d", ft_isalnum(c));
-
-// 	return (0);
-// }

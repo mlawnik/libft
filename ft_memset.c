@@ -6,7 +6,7 @@
 /*   By: mlawnik <mlawnik@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 11:07:36 by mlawnik           #+#    #+#             */
-/*   Updated: 2022/12/19 15:22:45 by mlawnik          ###   ########.fr       */
+/*   Updated: 2023/01/20 18:13:06 by mlawnik          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,3 @@ void	*ft_memset(void *b, int c, size_t len)
 	}
 	return (b);
 }
-
-// #include <stdio.h>
-// #include <string.h>
-
-// int	main(void)
-// {
-// 	char	*str;
-
-// 	str = strdup("hello");
-// 	ft_memset(str, 'a', 5);
-// 	printf("%s\n", str);
-// }

@@ -6,7 +6,7 @@
 /*   By: mlawnik <mlawnik@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 11:39:19 by mlawnik           #+#    #+#             */
-/*   Updated: 2023/01/21 15:12:17 by mlawnik          ###   ########.fr       */
+/*   Updated: 2023/01/20 12:57:02 by mlawnik          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,7 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
-// /**
-//  *  @brief check if c is alfabetical or numeric
-//  *  @param integer blah blah blah
-// */
 int		ft_isalnum(int c);
-
 int		ft_isalpha(int c);
 int		ft_isascii(int c);
 int		ft_isdigit(int c);

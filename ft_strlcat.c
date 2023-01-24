@@ -6,7 +6,7 @@
 /*   By: mlawnik <mlawnik@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 14:01:11 by mlawnik           #+#    #+#             */
-/*   Updated: 2022/12/22 15:05:31 by mlawnik          ###   ########.fr       */
+/*   Updated: 2023/01/20 18:12:42 by mlawnik          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,20 +35,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	else
 		return (dst_len + src_len);
 }
-
-// #include <stdio.h>
-// #include <string.h>
-
-// int	main(void)
-// {
-// 	char dst[100] = "Hello";
-// 	const char *src = ", world!";
-// 	size_t dstsize = 15;
-// 	size_t expected_result = strlcat(dst, src, dstsize);
-// 	size_t result = ft_strlcat(dst, src, dstsize);
-
-// 	printf("result: %zu\n", result);
-// 	printf("expected_result: %zu\n", expected_result);
-
-// 	return 0;
-// }

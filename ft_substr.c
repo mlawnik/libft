@@ -6,7 +6,7 @@
 /*   By: mlawnik <mlawnik@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 13:55:06 by mlawnik           #+#    #+#             */
-/*   Updated: 2023/01/20 17:23:54 by mlawnik          ###   ########.fr       */
+/*   Updated: 2023/01/20 19:28:36 by mlawnik          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!s)
 		return (NULL);
 	s_len = ft_strlen(s);
+	if (start + len >= s_len)
+		len = s_len - start;
 	if (len > s_len)
 		substring = malloc(s_len + 1);
 	else
@@ -34,8 +36,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	((char *) substring)[0] = '\0';
 	return ((char *) substring);
 }
-
-// int	main(void)
-// {
-// 	ft_substr("hola", 0, 18446744073709551615);
-// }

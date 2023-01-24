@@ -6,7 +6,7 @@
 /*   By: mlawnik <mlawnik@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 11:19:39 by mlawnik           #+#    #+#             */
-/*   Updated: 2022/12/22 15:19:51 by mlawnik          ###   ########.fr       */
+/*   Updated: 2023/01/20 18:12:34 by mlawnik          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,20 +31,3 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	}
 	return (src_len);
 }
-
-// #include <stdio.h>
-// #include <string.h>
-// #include <stdlib.h>
-
-// int	main(void)
-// {
-// 	char dst[6];
-// 	char *src = "Hello";
-// 	size_t dstsize = 6;
-
-// 	printf("Expected output: %ld\n", strlcpy(dst, src, dstsize));
-// 	printf("ft_strlcpy output: %ld\n", ft_strlcpy(dst, src, dstsize));
-// 	printf("dst after strlcpy: %s\n", dst);
-
-// 	return 0;
-// }
